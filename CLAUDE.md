@@ -1,6 +1,13 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+This file provides shared project guidance to Claude Code (claude.ai/code) and Codex when working in this repository.
+
+## Shared Project Instructions and Memory
+
+- `CLAUDE.md` is the authoritative project instruction and memory file for both Claude Code and Codex.
+- Read this file when starting work. Record durable project decisions, conventions, and requested memory updates here.
+- Do not create `AGENTS.md`, `AGENTS.override.md`, or a separate project memory file unless the user explicitly requests one.
+- Codex can load this file through `project_doc_fallback_filenames = ["CLAUDE.md"]` in its local `~/.codex/config.toml`. Preserve this setup when using Codex on another machine.
 
 ---
 
@@ -8,9 +15,26 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 **Status:** To be determined
 - **Language/Framework:** [Fill in as development begins]
-- **Primary API/LLM Integration:** Claude, OpenAI GPT (Claude is primary in markdown/config)
+- **AI boundary:** AI may assist software development; the MVP must use non-AI processing and search, with no AI interpretation or restatement of email evidence.
 - **Database:** [If applicable]
 - **Deployment:** [If applicable]
+
+---
+
+## Confirmed Project Direction
+
+- The user is building a tool for expert witnesses to search large Outlook email archives and locate relevant source material across conversations spanning years.
+- The early MVP should prove archive import, useful search beyond basic Outlook search, conversation threading, readable email presentation, and relationships among messages, correspondents, case roles, and topics of interest.
+- Mac and potentially Windows are target environments; platform priority, archive formats and volumes, database, search engine, and implementation approach remain undecided.
+- The user wants to explore background processing that can prepare results for review the next day. This is a possibility to investigate, not an agreed performance requirement.
+- Long-term direction: a hosted application with archive uploads, processing, search, access controls, and data protection. Production cloud architecture is outside the immediate MVP discussion.
+- Later feature candidates: flagging searches and their results; flagging documents and manually associating them with topics, targets, and reports; bug reporting; estimates of time saved; actual review-time tracking for billing; and optional AI analysis in a future phase.
+- The meaning of "consolidate and explain" must remain consistent with the no-AI MVP boundary. How to clean presentation without changing source wording, how roles/topics are assigned, and whether attachment contents are searchable still need clarification.
+- The original user brief is preserved in `docs/2026-11-14-original-project-brief.txt`. It is a historical scope reference, not an approved design. Keep ongoing project memory in this `CLAUDE.md` file.
+- Current phase: brainstorming, MVP scope definition, and market evaluation. No product implementation or technical design has been approved; the decision to build versus adopt an existing product remains open.
+- The initial scope baseline is in `docs/2026-11-14-mvp-scope.md`. Candidate search methods and evidence-preservation behavior in that document are proposals, not approved implementation choices.
+- Product research and dated vendor pricing are in `docs/2026-11-14-product-research.md`. The recommended first comparisons are MailDex, Intella, and Nextpoint; this is an evaluation shortlist, not a purchase decision.
+- A copyable stakeholder email is in `docs/2026-11-14-product-evaluation-email.md`. It has not been sent. No trial account, purchase, or external archive upload has been authorized or performed.
 
 ---
 
@@ -92,7 +116,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Claude vs. GPT Integration
 - **Primary documentation:** Markdown in this repo (for Claude)
 - **GPT references:** Secondary; Claude-first decisions are authoritative
-- **LLM task division:** [Define as you build — e.g., "Claude handles text analysis, GPT handles summarization"]
+- **LLM task division:** Claude and Codex may help build the software. The MVP itself must not call AI models to interpret, summarize, or restate case emails.
 
 ### Testing Strategy
 [Fill in your testing approach:]
@@ -142,10 +166,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ---
 
-## Notes for Future Claude Sessions
+## Notes for Future Sessions
 
-[Ongoing guidance to be added:]
-- Current blockers or known issues
-- Architectural debt or refactoring candidates
-- Recent major changes or decisions
-- Links to important issues/PRs
+- The repository currently contains documentation and empty `src/` and `tests/` placeholders. There are no application dependencies or runnable tests.
+- Continue the requested brainstorming discussion before choosing a technical approach. A concrete expert-witness question that ordinary Outlook search handles poorly is still needed to define a useful acceptance scenario.
+- Verify the actual input archive format and scale. PST is the likely Outlook export format; direct OST support has not been agreed.
+- Preserve the no-AI MVP boundary when proposing topic organization, relationship exploration, or readable conversations. Local model inference is still AI and does not meet this boundary.
+- Product capabilities and prices are a research snapshot dated November 14, 2026. Recheck them before purchasing or making a final product decision.
+- Keep original briefs and dated research as reference artifacts under `docs/`; update ongoing project decisions and instructions here rather than creating another memory file.

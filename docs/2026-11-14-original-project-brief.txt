@@ -1,0 +1,26 @@
+Lawyer Email Search — Original Project Brief
+Captured: November 14, 2026
+Status: User's initial brief; not an approved design or implementation plan.
+The wording below is preserved, with chat formatting and whitespace normalized.
+
+Okay, here is the overall project. This is going to be a tool that helps expert witnesses sift and find relevant content within huge extracts of of Outlook backup files, which I believe are called ISTs.
+
+As of right now, the push here is not to use AI as an effort to evaluate emails and conversations that could potentially take the place over years to analyze and retell a story, but instead to simply allow an expert witness a searching methodology and set of tools that can greatly enhance their ability to find relevant information around a specific topic, thread it, display it in a format that they can easily read while cutting out jargon or cutting out attachments and stylized issues, and really just displaying the information in a concise way.
+
+So the expert witness can find what they can what they need. So again, to repeat, we are trying to use AI to build a application that supports sorting through this huge quantity of data, but is not actually using AI to interpret and restate the findings of that. So it'll just be used in the development of software that has to use non-AI features and functionality to search emails.
+
+And these emails will need to create or need to perhaps understand relations between each other, relations between correspondents, the specific steps that a person takes with or not steps but specific rule that somebody actually has within a case.
+
+The way that I see this working is in a couple of parts. From an architectural standpoint, I think the long-term goal would be for this application and program to be web hosted that somebody would simply upload their extract of all this outlook output and it would allow our processes to run and begin categorizing, relating, simplifying, standardizing all in our cloud hosted application.
+
+At which time it would then present search interface to allow a person to read through this content. There would need to be a lot of security probably in place for this cloud-hosted application to make sure that specific people could access it and all of that and how we encrypt data in transit and yada yada yada.
+
+Right now I don't want to focus on that. I want to build an MVP to really prove that this is a type of development project that can be done specifically in uploading these large extra and I think allowing certain search terms to be entered and modeling how we are going to relate people to the case and how we can associate topics in a fashion that can then be searched and it's got to be better than a basic look search.
+
+There will eventually be additional features here such as the ability to flag a search and the output that it generated the ability to flag documents and manually relate them to search terms or targets and report the ability to log bugs the ability to associate estimated search time based in human terms to figure out how much time this application has saved.
+
+Logging the actual time spent by an end user because that's going to end up becoming billable time on the project and eventually probably the ability to add models, AI models to this down the road, when the judicial system is more comfortable with AI models analyzing conversations over time.
+
+Right now, I want you to clearly identify that this is the project scope that we're shooting for here in this early stage. I would even appreciate a raw file document of this scope for the project to be revisited and compared against at a later date, but make sure that we build out a full scope for our MVP, which can run on either Mac or potentially on a Windows machine, depending on our needs, and figure out all the different ways that we can search.
+
+And I'll need you to do some deep understanding into probably we can create a database and related topic of interest and if perhaps you know an end user would enter those and come back the next day to find the results as long as it could consolidate like consolidate and explain the discussion fairly clearly.
